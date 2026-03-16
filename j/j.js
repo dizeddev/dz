@@ -6,10 +6,10 @@
 
     if (!id) return;
 
-    const redirectsSource = "https://cdn.jsdelivr.net/gh/USERNAME/REPO/redirects.json";
+    const redirectsSource = "https://cdn.jsdelivr.net/gh/dizeddev/dz/redirects.json";
 
     fetch(redirectsSource)
-        .then(response => response.json())
+        .then(res => res.json())
         .then(redirects => {
 
             if (redirects[id]) {
@@ -17,8 +17,6 @@
             }
 
         })
-        .catch(err => {
-            console.error("Redirect list failed to load", err);
-        });
+        .catch(err => console.error(err));
 
 })();
